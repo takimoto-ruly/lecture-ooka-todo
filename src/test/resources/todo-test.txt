@@ -1,0 +1,2 @@
+1,INCOMPLETE,TodoReaderの実装
+2,COMPLETED,TodoReaderの実装
