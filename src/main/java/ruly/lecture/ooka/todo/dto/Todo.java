@@ -12,10 +12,21 @@ import lombok.ToString;
 public class Todo {
 	public enum Status {
 		/** 未完了 */
-		INCOMPLETE,
+		INCOMPLETE("未完了"),
 
 		/** 完了 */
-		COMPLETED,;
+		COMPLETED("完了"),
+		;
+		
+		private String mark;
+		
+		private Status(String mark) {
+			this.mark = mark;
+		}
+		
+		public String getMark() {
+			return this.mark;
+		}
 	}
 
 	/** ID */

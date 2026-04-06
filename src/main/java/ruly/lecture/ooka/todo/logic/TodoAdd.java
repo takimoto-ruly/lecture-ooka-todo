@@ -1,5 +1,6 @@
 package ruly.lecture.ooka.todo.logic;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,15 +9,17 @@ import ruly.lecture.ooka.todo.dto.Todo;
 
 public class TodoAdd {
 
-	/**
-	 * ユーザーから入力を受け
-	 * TODOリストに追加する
-	 */
+	private Scanner scanner;
+	private List<Todo> todos = new ArrayList<>();
+	private int id = 1;
 	
-	Scanner scanner = new Scanner(System.in);
-	List<Todo> todos = new ArrayList<>();
-	int id = 1;
+	public TodoAdd(InputStream systemIn) {
+		this.scanner = new Scanner(systemIn);
+	}
 
+	/**
+	 * ユーザーから入力を受け TODOリストに追加する
+	 */
 	public List<Todo> todoAdd() {
 		System.out.println("追加するTODOを入力");
 		String content = scanner.nextLine();
