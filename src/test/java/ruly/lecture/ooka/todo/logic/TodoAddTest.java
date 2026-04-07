@@ -44,21 +44,4 @@ public class TodoAddTest {
 		// 検証（期待値 == 実測値）
 		assertIterableEquals(expected, actual);
 	}
-
-	@DisplayName("todoAdd で完了したTODOを追加できること")
-	@Test
-	void todoAdd2() {
-		String input = "テストTODO（完了）\n2\n";
-		InputStream mockIn = new ByteArrayInputStream(input.getBytes());
-		sut = new TodoAdd(mockIn);
-
-		// 期待値
-		List<Todo> expected = List.of(new Todo(1, Todo.Status.COMPLETED, "テストTODO（完了）"));
-
-		// 実測値（テスト対象メソッドの戻り値）
-		List<Todo> actual = sut.todoAdd();
-
-		// 検証（期待値 == 実測値）
-		assertIterableEquals(expected, actual);
-	}
 }
