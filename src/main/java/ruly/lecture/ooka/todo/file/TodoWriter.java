@@ -10,7 +10,7 @@ public class TodoWriter {
 	 * TODOリストをファイルに書き込み保存する
 	 */
 	
-	public void todoWriter(List<Todo> todos) {
+	public void Write(List<Todo> todos) {
 
 	}
 }

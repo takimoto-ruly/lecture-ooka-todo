@@ -7,10 +7,6 @@ import java.util.Scanner;
 import ruly.lecture.ooka.todo.dto.Todo;
 
 public class TodoDelete {
-	/**
-	 * ユーザーから入力を受け
-	 * TODOリストの削除
-	 */
 
 	private Scanner scanner;
 
@@ -18,6 +14,10 @@ public class TodoDelete {
 		this.scanner = new Scanner(systemIn);
 	}
 
+	/**
+	 * ユーザーから入力を受け
+	 * TODOリストの削除
+	 */
 	public List<Todo> todoDelete(List<Todo> todos) {
 		if (todos.isEmpty()) {
 			System.out.println("削除する項目がありません。");

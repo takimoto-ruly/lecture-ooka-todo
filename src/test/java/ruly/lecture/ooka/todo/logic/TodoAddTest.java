@@ -15,17 +15,17 @@ import ruly.lecture.ooka.todo.dto.Todo;
 
 public class TodoAddTest {
 	TodoAdd sut;
-	InputStream orgIn;
-	InputStream mockIn;
+	//	InputStream orgIn;
+	//	InputStream mockIn;
 
 	@BeforeEach
 	void setUpEach() {
-		orgIn = System.in;
+		//	orgIn = System.in;
 	}
 
 	@AfterEach
 	void tearDown() {
-		System.setIn(orgIn);
+		//	System.setIn(orgIn);
 	}
 
 	@DisplayName("todoAdd で未完了のTODOを追加できること")
@@ -44,4 +44,5 @@ public class TodoAddTest {
 		// 検証（期待値 == 実測値）
 		assertIterableEquals(expected, actual);
 	}
+	
 }
