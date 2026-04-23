@@ -16,7 +16,15 @@ public class PriceCalculator {
 	 * @return 割引適用後の支払い金額
 	 */
 	public int calculateDiscountedPrice(int totalAmount) {
+		int result = 0;
+		if (totalAmount >= 10000) {
+			result = totalAmount - 1000;
+		} else if (totalAmount >= 5000) {
+			result = totalAmount - 500;
+		} else if (totalAmount < 5000) {
+			return totalAmount;
+		}
 		// TODO: if-else文を使って、金額に応じた割引額を計算してください
-		return 0;
+		return result;
 	}
 }
