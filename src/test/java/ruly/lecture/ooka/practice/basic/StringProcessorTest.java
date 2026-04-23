@@ -21,7 +21,7 @@ public class StringProcessorTest {
 	@DisplayName("文字列内の特定の文字数が正しくカウントされること")
 	void testCountChar() {
 		assertEquals(3, processor.countChar("apple pie", 'p'));
-		assertEquals(2, processor.countChar("banana", 'a'));
+		assertEquals(3, processor.countChar("banana", 'a'));
 		assertEquals(0, processor.countChar("hello", 'z'));
 		assertEquals(0, processor.countChar("", 'a'));
 	}

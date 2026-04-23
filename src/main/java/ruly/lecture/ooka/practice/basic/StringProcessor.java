@@ -16,8 +16,15 @@ public class StringProcessor {
 	 * @return 繰り返した結果の文字列。countが0以下の場合は空文字。
 	 */
 	public String repeatString(String str, int count) {
+		String value = "";
+		if (count <= 0) {
+			return "";
+		}
+		for (int i = 1; i <= count; i++) {
+			value += str;
+		}
 		// TODO: for文を使って実装してください
-		return "";
+		return value;
 	}
 
 	/**
@@ -35,8 +42,18 @@ public class StringProcessor {
 	 * @return 一致した文字の個数
 	 */
 	public int countChar(String text, char target) {
+
+		if (text.isEmpty()) {
+			return 0;
+		}
+		int count = 0;
+		for (int i = 0; i < text.length(); i++) {
+			if (text.charAt(i) == target) {
+				count++;
+			}
+		}
 		// TODO: 文字列の長さ分ループさせ、if文で一致判定をしてカウントしてください
 		// ヒント: text.length() と text.charAt(i) を使います
-		return 0;
+		return count;
 	}
 }
