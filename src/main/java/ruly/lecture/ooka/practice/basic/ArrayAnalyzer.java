@@ -15,9 +15,17 @@ public class ArrayAnalyzer {
 	 * @return 配列内の最大値
 	 */
 	public int findMax(int[] numbers) {
-		// TODO: ループを使って最大値を求めてください
-		// ヒント: int max = numbers[0]; のように最初の要素を暫定の最大値として保持します
-		return 0;
+		if (numbers.length == 0) {
+			return 0;
+		}
+
+		int max = numbers[0];
+		for (int number : numbers) {
+			if (max < number) {
+				max = number;
+			}
+		}
+		return max;
 	}
 
 }
