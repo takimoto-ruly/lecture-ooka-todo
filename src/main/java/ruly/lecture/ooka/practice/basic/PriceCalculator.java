@@ -24,7 +24,6 @@ public class PriceCalculator {
 		} else if (totalAmount < 5000) {
 			return totalAmount;
 		}
-		// TODO: if-else文を使って、金額に応じた割引額を計算してください
 		return result;
 	}
 }

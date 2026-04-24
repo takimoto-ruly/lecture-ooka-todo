@@ -18,7 +18,7 @@ public class Validator {
 	public boolean isValidPassword(String password) {
 
 		int length = password.length();
-		if (length < 8 || length > 16) {
+		if (length <= 8 || length > 16) {
 			return false;
 		}
 		char first = password.charAt(0);
@@ -26,8 +26,6 @@ public class Validator {
 			return false;
 		}
 
-		// TODO: 文字列の長さチェックと、最初の文字の判定を実装してください
-		// ヒント: password.length() と password.charAt(0) を使います
 		return true;
 	}
 }

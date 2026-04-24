@@ -23,7 +23,6 @@ public class StringProcessor {
 		for (int i = 1; i <= count; i++) {
 			value += str;
 		}
-		// TODO: for文を使って実装してください
 		return value;
 	}
 
@@ -52,8 +51,6 @@ public class StringProcessor {
 				count++;
 			}
 		}
-		// TODO: 文字列の長さ分ループさせ、if文で一致判定をしてカウントしてください
-		// ヒント: text.length() と text.charAt(i) を使います
 		return count;
 	}
 }

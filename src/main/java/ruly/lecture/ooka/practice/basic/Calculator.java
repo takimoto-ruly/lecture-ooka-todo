@@ -9,7 +9,6 @@ public class Calculator {
 		for (int i = 1; i <= max; i++) {
 			total += i;
 		}
-		// TODO: 合計を保持する変数を用意し、for文で加算してください
 		return total;
 	}
 }
