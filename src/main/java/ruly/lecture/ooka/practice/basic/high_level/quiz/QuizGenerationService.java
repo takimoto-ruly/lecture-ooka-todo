@@ -39,7 +39,9 @@ public class QuizGenerationService {
 	 * @throws IllegalArgumentException 難易度が不正、またはmodeがnullの場合
 	 */
 	public QuizDTO generateQuestion(CalcMode mode, int difficulty) {
-		// --- 実装してください ---
+		QuizDTO beginner =new QuizDTO(random.nextInt(8),random.nextInt(8));
+		
+			// --- 実装してください ---
 		// ヒント：
 		// 1. switch式で min と max を決定する
 		// 2. random.nextInt(max - min + 1) + min で範囲数値を生成

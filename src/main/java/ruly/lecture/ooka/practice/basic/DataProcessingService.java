@@ -21,7 +21,25 @@ public class DataProcessingService {
 	 * @return [合計値, 最大値] の int配列
 	 */
 	public int[] processData(String[] inputs) {
-		// TODO: ここに実装してください
-		return null;
+		int sum = 0;
+		int max = 0;
+
+		if (inputs == null) {
+			return null;
+		}
+
+		for (String input : inputs) {
+			try {
+				int num = Integer.parseInt(input);
+				if (num > 0) {
+					sum += num;
+					if (max < num) {
+						max = num;
+					}
+				}
+			} catch (NumberFormatException e) {
+			}
+		}
+		return new int[] { sum, max };
 	}
 }
