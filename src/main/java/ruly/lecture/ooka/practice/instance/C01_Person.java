@@ -10,5 +10,10 @@ package ruly.lecture.ooka.practice.instance;
  * </ul>
  */
 public class C01_Person {
+	String name;
+
+	public String introduce() {
+		return "私の名前は" + name + "です";
+	}
 
 }
