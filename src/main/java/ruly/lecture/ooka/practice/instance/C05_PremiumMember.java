@@ -44,4 +44,49 @@ import lombok.Getter;
 @Getter
 public class C05_PremiumMember {
 
+	private String memberId;
+	private String memberName;
+	private int points = 0;
+	private boolean isDiamond = false;
+	private static int totalSystemPoints;
+
+	public C05_PremiumMember(String memberId, String memberName) {
+		this.memberId = memberId;
+		this.memberName = memberName;
+	}
+
+	public String getMemberId() {
+		return this.memberId;
+	}
+
+	public String getMemberName() {
+		return this.memberName;
+	}
+
+	public static int getTotalSystemPoints() {
+		return totalSystemPoints;
+	}
+
+	public void addPoints(int amount) {
+		if (amount <= 0) {
+			return;
+		}
+
+		this.points += amount;
+		totalSystemPoints += amount;
+		if (this.points >= 10000) {
+			this.isDiamond = true;
+		}
+	}
+
+	public boolean usePoints(int amount) {
+		if (amount < 0 || this.points < amount) {
+			return false;
+		}
+
+		this.points -= amount;
+		totalSystemPoints -= amount;
+		return true;
+	}
+
 }
