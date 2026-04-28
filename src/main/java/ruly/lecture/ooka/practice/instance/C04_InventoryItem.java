@@ -44,6 +44,7 @@ public class C04_InventoryItem {
 	private String itemId;
 	private String itemName;
 	private int quantity = 0;
+	private static int totalShippedCount;
 
 	public C04_InventoryItem(String id, String name) {
 		this.itemId = id;
@@ -62,6 +63,10 @@ public class C04_InventoryItem {
 		return this.quantity;
 	}
 
+	public static int getTotalShippedCount() {
+		return totalShippedCount;
+	}
+
 	public void restock(int amount) {
 		if (amount > 0) {
 			this.quantity += amount;
@@ -69,10 +74,11 @@ public class C04_InventoryItem {
 	}
 
 	public boolean ship(int amount) {
-		if (amount < 0 && this.quantity < amount) {
+		if (amount < 0 || this.quantity < amount) {
 			return false;
 		} else {
 			quantity -= amount;
+			totalShippedCount += amount;
 			return true;
 		}
 	}
