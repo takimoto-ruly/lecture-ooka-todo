@@ -40,5 +40,42 @@ package ruly.lecture.ooka.practice.instance;
  * </ul>
  */
 public class C04_InventoryItem {
+
+	private String itemId;
+	private String itemName;
+	private int quantity = 0;
+
+	public C04_InventoryItem(String id, String name) {
+		this.itemId = id;
+		this.itemName = name;
+	}
+
+	public String getItemId() {
+		return this.itemId;
+	}
+
+	public String getItemName() {
+		return this.itemName;
+	}
+
+	public int getQuantity() {
+		return this.quantity;
+	}
+
+	public void restock(int amount) {
+		if (amount > 0) {
+			this.quantity += amount;
+		}
+	}
+
+	public boolean ship(int amount) {
+		if (amount < 0 && this.quantity < amount) {
+			return false;
+		} else {
+			quantity -= amount;
+			return true;
+		}
+	}
+
 	// 全てのフィールド、コンストラクタ、メソッドを仕様に基づいてゼロから実装してください
 }

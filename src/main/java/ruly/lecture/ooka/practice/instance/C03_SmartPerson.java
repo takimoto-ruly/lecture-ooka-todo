@@ -30,5 +30,48 @@ package ruly.lecture.ooka.practice.instance;
  * </ul>
  */
 public class C03_SmartPerson {
+	private int age;
+	private String name;
+	private String petName;
+	private static int totalCount = 0;
 
+	public C03_SmartPerson(String name, int age, String petName) {
+		this.name = name;
+		this.age = age;
+		this.petName = petName;
+
+		totalCount++;
+	}
+
+	public void setAge(int age) {
+		if (age < 0) {
+			this.age = 0;
+		} else {
+			this.age = age;
+		}
+	}
+
+	public int getAge() {
+		return this.age;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setPetName(String petName) {
+		this.petName = petName;
+	}
+
+	public String getPetName() {
+		return this.petName;
+	}
+
+	public static int getTotalCount() {
+		return totalCount;
+	}
 }
