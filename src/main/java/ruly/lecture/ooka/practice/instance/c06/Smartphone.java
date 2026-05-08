@@ -13,5 +13,20 @@ package ruly.lecture.ooka.practice.instance.c06;
  * </ul>
  */
 public class Smartphone {
+	private String modelName;
+	Battery battery;
+
+	public Smartphone(String modelName, Battery battery) {
+		this.modelName = modelName;
+		this.battery = battery;
+	}
+
+	public void useApp(String appName) {
+		if (battery.getLevel() == 0) {
+			System.out.println("電池がありません");
+		} else {
+			Battery.consume(5);
+		}
+	}
 	// TODO: フィールド、コンストラクタ、メソッドを実装してください
 }

@@ -13,5 +13,22 @@ package ruly.lecture.ooka.practice.instance.c06;
  * </ul>
  */
 public class Battery {
+
+	private static int level;
+
+	public Battery(int level) {
+		this.level = level;
+	}
+
+	public static void consume(int amount) {
+		if (level >= amount) {
+			level -= amount;
+		}
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
 	// TODO: フィールド、コンストラクタ、メソッドを実装してください
 }

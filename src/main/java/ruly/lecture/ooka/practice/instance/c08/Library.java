@@ -1,5 +1,8 @@
 package ruly.lecture.ooka.practice.instance.c08;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 蔵書管理と、利用者への貸出・返却の仲介を行うクラス。
  * <p>
@@ -23,4 +26,27 @@ package ruly.lecture.ooka.practice.instance.c08;
  */
 public class Library {
 
+	List<Book> allBooks = new ArrayList<>();
+
+	public void addBook(Book book) {
+		allBooks.add(book);
+	}
+
+	public boolean processLending(Member member, Book book) {
+		if (allBooks.contains(book) && !book.isBorrowed() && member.getBorrowedCount() < 5) {
+			book.borrowBook();
+			member.acceptBook(book);
+			return true;
+		}
+
+		return false;
+	}
+
+	public void processReturn(Member member, Book book) {
+
+		if (member.getBorrowedBooks().contains(book)) {
+			book.returnBook();
+			member.releaseBook(book);
+		}
+	}
 }

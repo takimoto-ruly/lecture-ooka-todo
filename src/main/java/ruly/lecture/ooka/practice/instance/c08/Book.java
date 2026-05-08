@@ -15,5 +15,32 @@ package ruly.lecture.ooka.practice.instance.c08;
  * </ul>
  */
 public class Book {
-	// TODO: フィールド、コンストラクタ、メソッドを実装してください
+
+	private String title;
+	private boolean isBorrowed;
+
+	public Book(String title) {
+		this.title = title;
+		isBorrowed = false;
+	}
+
+	public boolean borrowBook() {
+		if (this.isBorrowed) {
+			return false;
+		}
+		this.isBorrowed = true;
+		return true;
+	}
+
+	public void returnBook() {
+		this.isBorrowed = false;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public boolean isBorrowed() {
+		return this.isBorrowed;
+	}
 }

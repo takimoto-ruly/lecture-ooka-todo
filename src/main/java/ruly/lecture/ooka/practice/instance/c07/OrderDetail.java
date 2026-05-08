@@ -13,5 +13,21 @@ package ruly.lecture.ooka.practice.instance.c07;
  * </ul>
  */
 public class OrderDetail {
+	Product product;
+	private int quantity;
+	private int unitPrice;
+
+	public OrderDetail(Product product, int quantity) {
+		if (quantity > 0) {
+			this.quantity = quantity;
+		}
+		this.product = product;
+		this.unitPrice = product.getPrice();
+	}
+
+	public int getSubtotal() {
+		return this.unitPrice * this.quantity;
+
+	}
 
 }

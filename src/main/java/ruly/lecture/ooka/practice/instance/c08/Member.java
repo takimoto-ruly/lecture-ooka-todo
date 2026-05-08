@@ -1,5 +1,8 @@
 package ruly.lecture.ooka.practice.instance.c08;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 図書館の利用者をあらわすクラス。
  * <p>
@@ -17,5 +20,32 @@ package ruly.lecture.ooka.practice.instance.c08;
  * </ul>
  */
 public class Member {
-	// TODO: List<Book> フィールドの初期化を忘れずに。
+
+	private String name;
+	List<Book> borrowedBooks = new ArrayList<>();
+
+	public Member(String name) {
+		this.borrowedBooks = new ArrayList<>();
+	}
+
+	public void acceptBook(Book book) {
+		this.borrowedBooks.add(book);
+	}
+
+	public void releaseBook(Book book) {
+		this.borrowedBooks.remove(book);
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public List<Book> getBorrowedBooks() {
+		return this.borrowedBooks;
+	}
+
+	public int getBorrowedCount() {
+		int borrowedCount = this.borrowedBooks.size();
+		return borrowedCount;
+	}
 }

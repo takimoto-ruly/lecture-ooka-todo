@@ -1,5 +1,8 @@
 package ruly.lecture.ooka.practice.instance.c07;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 複数の明細をまとめ、伝票全体の計算を行うクラス。
  * <p>
@@ -13,5 +16,23 @@ package ruly.lecture.ooka.practice.instance.c07;
  * </ul>
  */
 public class OrderReceipt {
+	List<OrderDetail> order = new ArrayList<>();
+	private int totalAmount;
+	private int taxAmount;
 
+	public void addDetail(Product p, int q) {
+		order.add(new OrderDetail(p, q));
+	}
+
+	public int calculateTotal() {
+		for (OrderDetail o : order) {
+			this.totalAmount += o.getSubtotal();
+		}
+		return this.totalAmount;
+	}
+
+	public int getTaxAmount() {
+		this.taxAmount = totalAmount *= 0.1;
+		return this.taxAmount;
+	}
 }

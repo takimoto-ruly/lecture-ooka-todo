@@ -12,5 +12,19 @@ package ruly.lecture.ooka.practice.instance.c07;
  * </ul>
  */
 public class Product {
+	private final int price;
+	private final String name;
 
+	public Product(String name, int price) {
+		this.price = price;
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return this.price;
+	}
+
+	public String getName() {
+		return this.name;
+	}
 }
