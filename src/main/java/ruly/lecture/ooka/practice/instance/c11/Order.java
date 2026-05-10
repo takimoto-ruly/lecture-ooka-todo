@@ -1,5 +1,7 @@
 package ruly.lecture.ooka.practice.instance.c11;
 
+import lombok.Getter;
+
 /**
  * 注文内容を保持するデータクラスです。
  * 
@@ -12,5 +14,12 @@ package ruly.lecture.ooka.practice.instance.c11;
  * </ul>
  */
 public class Order {
+
+	@Getter
+	private int totalAmount;
+
+	public Order(int totalAmount) {
+		this.totalAmount = totalAmount;
+	}
 
 }

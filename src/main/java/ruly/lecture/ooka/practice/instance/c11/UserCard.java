@@ -1,5 +1,7 @@
 package ruly.lecture.ooka.practice.instance.c11;
 
+import lombok.Getter;
+
 /**
  * ユーザーのカード情報を保持するデータクラスです。
  * 
@@ -13,5 +15,16 @@ package ruly.lecture.ooka.practice.instance.c11;
  * </ul>
  */
 public class UserCard {
+	@Getter
+	private int pointBalance;
+	private boolean isExpired;
 
+	public UserCard(int pointBalance, boolean isExpiread) {
+		this.pointBalance = pointBalance;
+		this.isExpired = isExpiread;
+	}
+
+	public boolean getIsExpired() {
+		return isExpired;
+	}
 }
