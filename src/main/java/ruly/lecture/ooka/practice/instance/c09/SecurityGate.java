@@ -20,4 +20,17 @@ package ruly.lecture.ooka.practice.instance.c09;
  * </ul>
  */
 public class SecurityGate {
+
+	public boolean canEnter(UserCard card, Room room) {
+		if (card == null || room == null) {
+			return false;
+		}
+		if (card.getIsExpired()) {
+			return false;
+		}
+		if (card.getSequrityLevel() >= room.getRequiredLevel()) {
+			return true;
+		}
+		return false;
+	}
 }
