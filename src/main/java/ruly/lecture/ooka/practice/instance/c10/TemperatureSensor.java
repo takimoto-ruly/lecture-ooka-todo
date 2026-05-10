@@ -12,5 +12,13 @@ package ruly.lecture.ooka.practice.instance.c10;
  * </ul>
  */
 public class TemperatureSensor {
+	private double currentTemp;
 
+	public TemperatureSensor(double currentTemp) {
+		this.currentTemp = currentTemp;
+	}
+
+	public double getCurrentTemp() {
+		return this.currentTemp;
+	}
 }

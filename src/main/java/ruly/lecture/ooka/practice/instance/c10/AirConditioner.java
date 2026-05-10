@@ -13,5 +13,20 @@ package ruly.lecture.ooka.practice.instance.c10;
  * </ul>
  */
 public class AirConditioner {
+	private boolean isPowerOn;
+	private double settingTemp;
+
+	public AirConditioner(boolean isPowerOn, double settingTemp) {
+		this.isPowerOn = isPowerOn;
+		this.settingTemp = settingTemp;
+	}
+
+	public boolean getIsPowerOn() {
+		return this.isPowerOn;
+	}
+
+	public double getSettingTemp() {
+		return this.settingTemp;
+	}
 
 }
