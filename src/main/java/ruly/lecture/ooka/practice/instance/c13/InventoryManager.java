@@ -21,4 +21,14 @@ package ruly.lecture.ooka.practice.instance.c13;
  */
 public class InventoryManager {
 
+	public boolean canAllocate(Product product, PurchaseOrder order) {
+		if (product == null || order == null || order.getOrderQuantity() <= 0) {
+			return false;
+		}
+		if (product.getStoskQuantity() >= order.getOrderQuantity()) {
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -7,4 +7,15 @@ package ruly.lecture.ooka.practice.instance.c13;
  */
 public class Product {
 
+	private String name;
+	private int stockQuantity;
+
+	public Product(String name, int stockQuantity) {
+		this.name = name;
+		this.stockQuantity = stockQuantity;
+	}
+
+	public int getStoskQuantity() {
+		return this.stockQuantity;
+	}
 }
