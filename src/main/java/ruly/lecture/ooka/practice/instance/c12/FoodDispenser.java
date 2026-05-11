@@ -6,4 +6,14 @@ package ruly.lecture.ooka.practice.instance.c12;
  */
 public class FoodDispenser {
 
+	private int remainingAmount;
+
+	public FoodDispenser(int remainingAmount) {
+		this.remainingAmount = remainingAmount;
+	}
+
+	public int getRemainingAmount() {
+		return this.remainingAmount;
+	}
+
 }
