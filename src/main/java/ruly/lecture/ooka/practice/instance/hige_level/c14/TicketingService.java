@@ -26,4 +26,19 @@ package ruly.lecture.ooka.practice.instance.hige_level.c14;
  */
 public class TicketingService {
 
+	public boolean canIssue(PassengerDTO passenger, TicketDTO ticket) {
+		if (passenger == null || ticket == null || passenger.getPassport() == null) {
+			return false;
+		}
+
+		if (passenger.getPassport().isExpired()) {
+			return false;
+		}
+
+		if (!passenger.getName().equals(ticket.getPassengerName())) {
+			return false;
+		}
+
+		return true;
+	}
 }
