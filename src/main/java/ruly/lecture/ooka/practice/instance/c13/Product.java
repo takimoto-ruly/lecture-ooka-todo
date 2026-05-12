@@ -1,10 +1,13 @@
 package ruly.lecture.ooka.practice.instance.c13;
 
+import lombok.Getter;
+
 /**
  * 商品情報を保持するクラスです。<br>
  * フィールド: String name, int stockQuantity<br>
  * コンストラクタ: 全フィールドを初期化
  */
+@Getter
 public class Product {
 
 	private String name;
@@ -15,7 +18,4 @@ public class Product {
 		this.stockQuantity = stockQuantity;
 	}
 
-	public int getStoskQuantity() {
-		return this.stockQuantity;
-	}
 }

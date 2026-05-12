@@ -25,9 +25,11 @@ public class InventoryManager {
 		if (product == null || order == null || order.getOrderQuantity() <= 0) {
 			return false;
 		}
-		if (product.getStoskQuantity() >= order.getOrderQuantity()) {
+
+		if (product.getStockQuantity() >= order.getOrderQuantity()) {
 			return true;
 		}
+
 		return false;
 	}
 
