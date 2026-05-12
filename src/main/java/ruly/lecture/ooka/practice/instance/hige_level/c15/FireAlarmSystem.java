@@ -24,4 +24,20 @@ package ruly.lecture.ooka.practice.instance.hige_level.c15;
  */
 public class FireAlarmSystem {
 
+	public boolean shouldRing(AlarmHub hub) {
+		if (hub == null || hub.getSensor() == null || hub.battery == null) {
+			return false;
+		}
+
+		if (hub.getBattery().getLevel() <= 10) {
+			return true;
+		}
+
+		if (hub.getSensor().getTemperatrue() >= 60) {
+			return true;
+		}
+
+		return false;
+	}
+
 }
