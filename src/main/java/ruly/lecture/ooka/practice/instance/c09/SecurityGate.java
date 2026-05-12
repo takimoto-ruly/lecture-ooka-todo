@@ -25,7 +25,7 @@ public class SecurityGate {
 		if (card == null || room == null) {
 			return false;
 		}
-		if (card.getIsExpired()) {
+		if (card.isExpired()) {
 			return false;
 		}
 		if (card.getSequrityLevel() >= room.getRequiredLevel()) {

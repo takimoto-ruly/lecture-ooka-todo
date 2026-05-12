@@ -24,7 +24,7 @@ public class UserCard {
 		this.isExpired = isExpiread;
 	}
 
-	public boolean getIsExpired() {
+	public boolean isExpired() {
 		return isExpired;
 	}
 }

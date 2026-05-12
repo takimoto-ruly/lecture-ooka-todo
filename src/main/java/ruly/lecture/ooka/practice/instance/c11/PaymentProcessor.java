@@ -22,7 +22,7 @@ package ruly.lecture.ooka.practice.instance.c11;
 public class PaymentProcessor {
 
 	public boolean canPayWithPoints(Order order, UserCard card) {
-		if (order == null || card == null || card.getIsExpired()) {
+		if (order == null || card == null || card.isExpired()) {
 			return false;
 		}
 		if (card.getPointBalance() >= order.getTotalAmount()) {

@@ -9,7 +9,7 @@ public class UserCard {
 
 	private String userName;
 	private int sequrityLevel;
-	private static boolean isExpired;
+	private boolean isExpired;
 
 	public UserCard(String userName, int sequrityLevel, boolean isExpired) {
 		this.userName = userName;
@@ -17,7 +17,7 @@ public class UserCard {
 		this.isExpired = isExpired;
 	}
 
-	public boolean getIsExpired() {
+	public boolean isExpired() {
 		return isExpired;
 	}
 
