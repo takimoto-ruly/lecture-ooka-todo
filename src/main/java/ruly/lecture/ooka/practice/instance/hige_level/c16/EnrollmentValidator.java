@@ -25,4 +25,25 @@ package ruly.lecture.ooka.practice.instance.hige_level.c16;
  */
 public class EnrollmentValidator {
 
+	public boolean isEligible(StudentDTO student, CourseDTO course, EnrollmentHistory history) {
+		if (student == null || course == null || history == null) {
+			return false;
+		}
+
+		if (!student.isHasPaidTuition()) {
+			return false;
+		}
+
+		if (student.getGrade() < course.getTargetGrade()) {
+			return false;
+		}
+
+		if (course.isAdvanced()) {
+			if (history.getCompletedCourses() < 5) {
+				return false;
+			}
+		}
+
+		return true;
+	}
 }
