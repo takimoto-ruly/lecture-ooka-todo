@@ -21,7 +21,7 @@ public class AirConditioner {
 		this.settingTemp = settingTemp;
 	}
 
-	public boolean getIsPowerOn() {
+	public boolean isPowerOn() {
 		return this.isPowerOn;
 	}
 

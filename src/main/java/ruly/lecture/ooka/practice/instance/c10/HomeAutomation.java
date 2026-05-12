@@ -25,7 +25,7 @@ public class HomeAutomation {
 		if(sensor == null || ac == null) {
 			return false;
 		}
-		if(ac.getIsPowerOn()) 
+		if(ac.isPowerOn()) 
 		{
 			double difference = sensor.getCurrentTemp() - ac.getSettingTemp();
 			if(difference >= 2.0) {
