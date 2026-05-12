@@ -22,12 +22,14 @@ package ruly.lecture.ooka.practice.instance.c12;
 public class FeedingController {
 
 	public boolean shouldFeed(Pet pet, FoodDispenser dispenser) {
-		if (pet == null || dispenser == null || pet.getIsSick()) {
+		if (pet == null || dispenser == null || pet.isSick()) {
 			return false;
 		}
-		if (pet.getHoursSinceLastmeal() >= 6 && dispenser.getRemainingAmount() >= 10) {
+
+		if (pet.getHoursSinceLastMeal() >= 6 && dispenser.getRemainingAmount() >= 10) {
 			return true;
 		}
+
 		return false;
 	}
 }
