@@ -25,6 +25,7 @@ public class PaymentProcessor {
 		if (order == null || card == null || card.isExpired()) {
 			return false;
 		}
+
 		if (card.getPointBalance() >= order.getTotalAmount()) {
 			return true;
 		}

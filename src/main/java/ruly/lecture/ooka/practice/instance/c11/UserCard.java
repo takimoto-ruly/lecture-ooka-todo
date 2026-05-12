@@ -14,17 +14,13 @@ import lombok.Getter;
  * <li>コンストラクタ: 全てのフィールドを初期化するコンストラクタを定義すること</li>
  * </ul>
  */
+@Getter
 public class UserCard {
-	@Getter
 	private int pointBalance;
 	private boolean isExpired;
 
 	public UserCard(int pointBalance, boolean isExpiread) {
 		this.pointBalance = pointBalance;
 		this.isExpired = isExpiread;
-	}
-
-	public boolean isExpired() {
-		return isExpired;
 	}
 }

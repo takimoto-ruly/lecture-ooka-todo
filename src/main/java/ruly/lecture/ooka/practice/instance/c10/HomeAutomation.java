@@ -21,17 +21,18 @@ package ruly.lecture.ooka.practice.instance.c10;
  */
 public class HomeAutomation {
 
-	public boolean needsCooling(TemperatureSensor sensor,AirConditioner ac) {
-		if(sensor == null || ac == null) {
+	public boolean needsCooling(TemperatureSensor sensor, AirConditioner ac) {
+		if (sensor == null || ac == null) {
 			return false;
 		}
-		if(ac.isPowerOn()) 
-		{
+
+		if (ac.isPowerOn()) {
 			double difference = sensor.getCurrentTemp() - ac.getSettingTemp();
-			if(difference >= 2.0) {
+			if (difference >= 2.0) {
 				return true;
 			}
 		}
+
 		return false;
 	}
 }
