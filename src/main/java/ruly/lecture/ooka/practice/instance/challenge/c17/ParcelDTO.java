@@ -5,11 +5,11 @@ import lombok.Getter;
 @Getter
 public class ParcelDTO {
 
-	private double weigth;
+	private double weight;
 	private String destinationCode;
 
-	public ParcelDTO(double weigth, String destinationCode) {
-		this.weigth = weigth;
+	public ParcelDTO(double weight, String destinationCode) {
+		this.weight = weight;
 		this.destinationCode = destinationCode;
 	}
 }
