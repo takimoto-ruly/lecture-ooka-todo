@@ -4,7 +4,7 @@ public class DeliveryValidator {
 
 	public boolean canAddParcel(TruckDTO truck, ParcelDTO newParcel, RouteRestrictionDTO route) {
 
-		if (truck == null || newParcel == null || route == null || truck.loadedParcels == null) {
+		if (truck == null || newParcel == null || route == null || truck.getLoadedParcels() == null) {
 			return false;
 		}
 
