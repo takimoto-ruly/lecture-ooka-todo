@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class FinancialServiceTest {
-	private final FainancialService service = new FainancialService();
+	private final FinancialService service = new FinancialService();
 
 	@Test
 	@DisplayName("正常系：複数口座の合算で支払える")

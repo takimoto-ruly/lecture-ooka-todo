@@ -14,4 +14,8 @@ public class BankAccountDTO {
 		this.balance = balance;
 		this.isFrozen = isFrozen;
 	}
+
+	public boolean isNotFrozen() {
+		return !this.isFrozen();
+	}
 }

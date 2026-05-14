@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 public class UserProfileDTO {
 
-	List<BankAccountDTO> accounts = new ArrayList<>();
+	private List<BankAccountDTO> accounts = new ArrayList<>();
 	private boolean isBlacklisted;
 
 	public UserProfileDTO(List<BankAccountDTO> account, boolean isBlacklisted) {

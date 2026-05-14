@@ -1,6 +1,6 @@
 package ruly.lecture.ooka.practice.instance.challenge.c19;
 
-public class FainancialService {
+public class FinancialService {
 
 	public boolean canAfford(UserProfileDTO user, PurchaseRequestDTO request) {
 		if (user == null || request == null || user.getAccounts() == null) {
@@ -11,12 +11,11 @@ public class FainancialService {
 			return false;
 		}
 
-		int totalBalance = 0;
-		for (BankAccountDTO accounts : user.getAccounts()) {
-			if (!accounts.isFrozen()) {
-				totalBalance += accounts.getBalance();
-			}
-		}
+		int totalBalance = user.getAccounts().stream()
+				.filter(BankAccountDTO::isNotFrozen)
+				.mapToInt(BankAccountDTO::getBalance)
+				.sum();
+
 		if (totalBalance >= request.getPrice()) {
 			return true;
 		}

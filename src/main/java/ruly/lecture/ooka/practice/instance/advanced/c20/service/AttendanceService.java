@@ -13,6 +13,7 @@ public class AttendanceService {
 	private final SalaryLogic logic;
 
 	public int calculateMonthlySalary(EmployeeDTO employee, List<WorkRecordDTO> records) {
+		
 		// TODO: 集計ロジックの実装
 		return 0;
 	}
