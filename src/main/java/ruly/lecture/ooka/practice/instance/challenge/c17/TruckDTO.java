@@ -9,7 +9,7 @@ import lombok.Getter;
 public class TruckDTO {
 
 	private double maxPayload;
-	List<ParcelDTO> loadedParcels = new ArrayList<>();
+	private List<ParcelDTO> loadedParcels = new ArrayList<>();
 
 	public TruckDTO(double maxPayload, List<ParcelDTO> loadeParcels) {
 		this.maxPayload = maxPayload;

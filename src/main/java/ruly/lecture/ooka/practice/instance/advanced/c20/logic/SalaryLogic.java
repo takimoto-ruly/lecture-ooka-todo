@@ -5,7 +5,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SalaryLogic {
 	public int calculate(int hourlyRate, double hours, double multiplier) {
-		// TODO: 四捨五入計算の実装
-		return 0;
+		double dailyPay = hourlyRate * hours * multiplier;
+		Math.round(dailyPay);
+		return (int) dailyPay;
 	}
 }
