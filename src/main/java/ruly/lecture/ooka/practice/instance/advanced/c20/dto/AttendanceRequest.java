@@ -6,6 +6,7 @@ import lombok.Value;
 
 @Value
 public class AttendanceRequest {
-	EmployeeDTO employee;
-	List<WorkRecordDTO> records;
+	/**従業員*/
+	private EmployeeDTO employee;
+	private List<WorkRecordDTO> records;
 }

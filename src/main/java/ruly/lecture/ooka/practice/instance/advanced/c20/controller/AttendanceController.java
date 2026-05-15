@@ -10,7 +10,16 @@ public class AttendanceController {
 	private final AttendanceService service;
 
 	public String processAttendance(AttendanceRequest request) {
-		// TODO: serviceを呼び出し、結果メッセージを生成
-		return "";
+		service.calculateMonthlySalary(request.getEmployee(), request.getRecords());
+
+		if (request == null || request.getRecords() == null) {
+			return "Error: No Data";
+		}
+
+		if (service.getTotalAmount() > 1000000) {
+			return "Alert: Check Manual";
+		}
+
+		return "Total:" + service.getTotalAmount() + "JPY";
 	}
 }

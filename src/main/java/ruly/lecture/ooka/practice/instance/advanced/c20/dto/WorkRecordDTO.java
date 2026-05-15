@@ -4,6 +4,7 @@ import lombok.Value;
 
 @Value
 public class WorkRecordDTO {
-	double hours;
-	boolean isHoliday;
+	/**時間*/
+	private double hours;
+	private boolean isHoliday;
 }
