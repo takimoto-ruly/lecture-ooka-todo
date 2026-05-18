@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 public class SalaryLogic {
 	public int calculate(int hourlyRate, double hours, double multiplier) {
 		double dailyPay = hourlyRate * hours * multiplier;
-		Math.round(dailyPay);
-		return (int) dailyPay;
+
+		return (int) Math.round(dailyPay);
 	}
 }

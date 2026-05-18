@@ -10,16 +10,17 @@ public class AttendanceController {
 	private final AttendanceService service;
 
 	public String processAttendance(AttendanceRequest request) {
-		service.calculateMonthlySalary(request.getEmployee(), request.getRecords());
 
-		if (request == null || request.getRecords() == null) {
+		if (request == null || request.getRecords() == null || request.getRecords().isEmpty()) {
 			return "Error: No Data";
 		}
 
-		if (service.getTotalAmount() > 1000000) {
+		int totalAmount = service.calculateMonthlySalary(request.getEmployee(), request.getRecords());
+
+		if (totalAmount > 1000000) {
 			return "Alert: Check Manual";
 		}
 
-		return "Total:" + service.getTotalAmount() + "JPY";
+		return "Total: " + totalAmount + " JPY";
 	}
 }
