@@ -1,7 +1,7 @@
 package ruly.lecture.ooka.practice.oop.o02;
 
-public class Circle extends Shape {
+public class Shape {
 	public String draw() {
-		return "円を描画します";
+		return "図形を描画します";
 	}
 }
