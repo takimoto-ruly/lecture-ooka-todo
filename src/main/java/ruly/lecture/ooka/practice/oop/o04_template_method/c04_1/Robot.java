@@ -5,6 +5,7 @@ abstract class Robot {
 	public final void startBehavior() {
 		System.out.println("ロボットの電源を入れます。");
 
+		greet();
 		// ここで子クラスが実装した挨拶を呼び出す
 		/* ①ここに適切なメソッド呼び出しを記述 */ ;
 
