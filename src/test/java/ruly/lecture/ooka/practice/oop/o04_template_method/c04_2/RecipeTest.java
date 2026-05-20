@@ -29,7 +29,7 @@ class RecipeTest {
 	@Test
 	@DisplayName("カレー職人：味付け文字列の取得および全体の調理フローの網羅検証")
 	void testCurryRecipe() {
-		CookingRecipe curry = new CurryCook();
+		CookingRecipe curry = new CurryRecipe();
 
 		// 1. 子クラスの個別メソッド検証
 		assertEquals("カレールーを投入", curry.getSpice(), "味付け文字列が正しくありません");
@@ -46,7 +46,7 @@ class RecipeTest {
 	@Test
 	@DisplayName("チャーハン職人：味付け文字列の取得および全体の調理フローの網羅検証")
 	void testFriedRiceRecipe() {
-		CookingRecipe rice = new FriedriceCook();
+		CookingRecipe rice = new FriedRiceRecipe();
 
 		// 1. 子クラスの個別メソッド検証
 		assertEquals("塩コショウを少々", rice.getSpice(), "味付け文字列が正しくありません");
