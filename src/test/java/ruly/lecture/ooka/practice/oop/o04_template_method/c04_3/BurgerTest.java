@@ -29,12 +29,12 @@ class BurgerTest {
 	@Test
 	@DisplayName("普通のバーガー：フックがfalseを返し、トッピング処理がスキップされることの検証")
 	void testNormalBurger() {
-		HamburgerShop burger = new Hambuger();
+		Hamburger burger = new NormalHamburger();
 
 		// フックの確認
-		assertFalse(burger.topping(), "デフォルト（普通）はfalseである必要があります");
+		assertFalse(burger.isToppingRequired(), "デフォルト（普通）はfalseである必要があります");
 
-		burger.cooking();
+		burger.cook();
 		String output = outContent.toString();
 
 		// トッピングが含まれていないことを網羅検証
@@ -47,12 +47,12 @@ class BurgerTest {
 	@Test
 	@DisplayName("チーズバーガー：フックがtrueを返し、トッピング処理が割り込むことの検証")
 	void testCheeseBurger() {
-		HamburgerShop burger = new CheeseBurger();
+		Hamburger burger = new CheeseBurger();
 
 		// フックの確認
-		assertTrue(burger.topping(), "チーズバーガーはtrueを返す必要があります");
+		assertTrue(burger.isToppingRequired(), "チーズバーガーはtrueを返す必要があります");
 
-		burger.cooking();
+		burger.cook();
 		String output = outContent.toString();
 
 		// トッピングが正しい位置（ソースの後、上のバンズの前）付近にあるかを含め検証

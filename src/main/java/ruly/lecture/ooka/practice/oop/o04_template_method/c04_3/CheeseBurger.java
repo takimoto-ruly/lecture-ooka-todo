@@ -1,15 +1,18 @@
 package ruly.lecture.ooka.practice.oop.o04_template_method.c04_3;
 
-public class CheeseBurger extends HamburgerShop {
-	protected String filling() {
+public class CheeseBurger extends Hamburger {
+	@Override
+	protected String topping() {
 		return "具材を乗せます";
 	}
 
-	protected String source() {
+	@Override
+	protected String applySauce() {
 		return "ソースをかけます";
 	}
 
-	public boolean topping() {
+	@Override
+	protected boolean isToppingRequired() {
 		return true;
 	}
 }
