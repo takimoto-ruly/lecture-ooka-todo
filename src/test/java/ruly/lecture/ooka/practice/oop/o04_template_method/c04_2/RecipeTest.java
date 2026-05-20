@@ -29,13 +29,13 @@ class RecipeTest {
 	@Test
 	@DisplayName("カレー職人：味付け文字列の取得および全体の調理フローの網羅検証")
 	void testCurryRecipe() {
-		Cook curry = new CurryCook();
+		CookingRecipe curry = new CurryCook();
 
 		// 1. 子クラスの個別メソッド検証
-		assertEquals("カレールーを投入", curry.spice(), "味付け文字列が正しくありません");
+		assertEquals("カレールーを投入", curry.getSpice(), "味付け文字列が正しくありません");
 
 		// 2. 全体の出力フロー検証
-		curry.srartCooking();
+		curry.cook();
 		String expected = "材料を切りました。" + System.lineSeparator() +
 				"炒めました。" + System.lineSeparator() +
 				"カレールーを投入をして完成です！" + System.lineSeparator();
@@ -46,13 +46,13 @@ class RecipeTest {
 	@Test
 	@DisplayName("チャーハン職人：味付け文字列の取得および全体の調理フローの網羅検証")
 	void testFriedRiceRecipe() {
-		Cook rice = new FriedriceCook();
+		CookingRecipe rice = new FriedriceCook();
 
 		// 1. 子クラスの個別メソッド検証
-		assertEquals("塩コショウを少々", rice.spice(), "味付け文字列が正しくありません");
+		assertEquals("塩コショウを少々", rice.getSpice(), "味付け文字列が正しくありません");
 
 		// 2. 全体の出力フロー検証
-		rice.srartCooking();
+		rice.cook();
 		String expected = "材料を切りました。" + System.lineSeparator() +
 				"炒めました。" + System.lineSeparator() +
 				"塩コショウを少々をして完成です！" + System.lineSeparator();
