@@ -29,7 +29,7 @@ class RobotTest {
 	@Test
 	@DisplayName("日本語ロボット：開始・固有挨拶・終了の順序と改行コードの網羅検証")
 	void testJapaneseRobotBehavior() {
-		Robot robot = new Japanese();
+		Robot robot = new JapaneseRobot();
 		robot.startBehavior();
 
 		// 期待される出力（OS依存の改行コードに対応）
@@ -43,7 +43,7 @@ class RobotTest {
 	@Test
 	@DisplayName("英語ロボット：開始・固有挨拶・終了の順序と改行コードの網羅検証")
 	void testEnglishRobotBehavior() {
-		Robot robot = new English();
+		Robot robot = new EnglishRobot();
 		robot.startBehavior();
 
 		String expected = "ロボットの電源を入れます。" + System.lineSeparator() +

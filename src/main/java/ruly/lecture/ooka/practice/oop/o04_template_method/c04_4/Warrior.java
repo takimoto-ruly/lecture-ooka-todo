@@ -4,5 +4,4 @@ public class Warrior extends Game {
 	protected int damage(int attackPower, int defensePower) {
 		return attackPower - defensePower;
 	}
-
 }

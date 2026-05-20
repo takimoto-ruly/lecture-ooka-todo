@@ -1,6 +1,6 @@
 package ruly.lecture.ooka.practice.oop.o04_template_method.c04_1;
 
-public class English extends Robot {
+public class EnglishRobot extends Robot {
 	public void greet() {
 		System.out.println("Hello!");
 	}
