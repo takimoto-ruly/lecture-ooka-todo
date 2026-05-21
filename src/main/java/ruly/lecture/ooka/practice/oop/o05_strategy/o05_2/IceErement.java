@@ -1,8 +1,8 @@
 package ruly.lecture.ooka.practice.oop.o05_strategy.o05_2;
 
-public class FireElement implements ElementalStrategy {
+public class IceErement implements ElementalStrategy {
 	@Override
 	public int damage(int data) {
-		return (int) (data * 1.5);
+		return data;
 	}
 }
