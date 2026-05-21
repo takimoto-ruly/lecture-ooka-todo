@@ -6,6 +6,6 @@ public class BookShop extends Shop {
 	}
 
 	public void preview() {
-System.out.println("試し読みしました");
+		System.out.println("試し読みしました");
 	}
 }

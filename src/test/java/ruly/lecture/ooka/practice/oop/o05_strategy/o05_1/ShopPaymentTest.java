@@ -8,7 +8,7 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("問題1: ショップ決済システムの包括テスト")
+@DisplayName("ショップ決済システムの包括テスト")
 class ShopPaymentTest {
 
 	@Test
@@ -34,7 +34,7 @@ class ShopPaymentTest {
 		assertEquals("3000円を現金で支払いました", shop.processPayment(3000));
 
 		// 2. 途中でカード決済に切り替え（Strategy）
-		shop.setPaymentMethod(new CardPayment());
+		shop.setPaymentStrategy(new CardPayment());
 		assertEquals("3000円をカードで支払いました（手数料0円）", shop.processPayment(3000));
 	}
 }
