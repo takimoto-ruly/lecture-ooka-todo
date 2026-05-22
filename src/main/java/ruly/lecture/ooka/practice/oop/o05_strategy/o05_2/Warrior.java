@@ -5,6 +5,7 @@ public class Warrior extends Character {
 		super(name, elementalStrategy);
 	}
 
+	@Override
 	public int attack() {
 		return elementalStrategy.damage(40);
 	}

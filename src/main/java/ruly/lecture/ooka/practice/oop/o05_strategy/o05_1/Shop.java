@@ -9,11 +9,6 @@ public class Shop {
 	private String shopName;
 	private PaymentStrategy paymentStrategy;
 
-	//	public Shop(String name, PaymentStrategy paymentMethod) {
-	//		this.shopName = name;
-	//		this.paymentMethod = paymentMethod;
-	//	}
-
 	public String processPayment(int amount) {
 		return paymentStrategy.pay(amount);
 	}

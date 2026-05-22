@@ -4,8 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@Setter
 public abstract class Character {
 	private String name;
+
+	@Setter
 	protected ElementalStrategy elementalStrategy;
+
+	public abstract int attack();
 }
