@@ -13,7 +13,7 @@ class VehicleSimulationTest {
 	void testGeneralRoad() {
 		DrivingRouteStrategy general = new GeneralRoad();
 		Vehicle car = new Car("12-34", general);
-		Vehicle truck = new LargeCar("56-78", general);
+		Vehicle truck = new LargeTruck("56-78", general);
 
 		assertEquals(0, car.calculatePrice(100));
 		assertEquals(0, truck.calculatePrice(100), "トラックでも一般道は0円であるべき");
@@ -24,7 +24,7 @@ class VehicleSimulationTest {
 	void testHighway() {
 		DrivingRouteStrategy highway = new HighwayRoad();
 		Vehicle car = new Car("12-34", highway);
-		Vehicle truck = new LargeCar("56-78", highway);
+		Vehicle truck = new LargeTruck("56-78", highway);
 
 		// 乗用車: 100km × 20 = 2000円
 		assertEquals(2000, car.calculatePrice(100));
