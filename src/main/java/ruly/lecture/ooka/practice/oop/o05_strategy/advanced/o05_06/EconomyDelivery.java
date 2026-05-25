@@ -4,6 +4,9 @@ public class EconomyDelivery implements DeliveryStrategy {
 
 	@Override
 	public int calculateDeliveryFee(double weight) {
+		if (weight < 0) {
+			throw new IllegalArgumentException("重量は0以上の数を指定すべきです");
+		}
 		return (int) (weight * 150);
 	}
 }
