@@ -5,7 +5,8 @@ public class GeneralUser extends Account {
 		super(accountName, filterStrategy);
 	}
 
-	public String post(String text) {
-		return "一般" + super.mainText(text);
+	@Override
+	public String mainText(String text) {
+		return "[一般] " + super.mainText(text);
 	}
 }

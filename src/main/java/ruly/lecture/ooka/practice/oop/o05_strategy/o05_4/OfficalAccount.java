@@ -5,7 +5,8 @@ public class OfficalAccount extends Account {
 		super(accountName, filterStrategy);
 	}
 
-	public String post(String text) {
-		return "公式" + super.mainText(text);
+	@Override
+	public String mainText(String text) {
+		return "【公式】" + super.mainText(text);
 	}
 }
