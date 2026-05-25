@@ -8,6 +8,6 @@ public class Enemy {
 	private int attackPower;
 
 	public String attack(FightingStyleStrategy fightingStyleStrategy) {
-		return this.name + "の攻撃：" + fightingStyleStrategy.calculateAttockPower(attackPower) + "ダメージ！";
+		return this.name + " の攻撃：" + fightingStyleStrategy.calculateAttockPower(attackPower) + " ダメージ！";
 	}
 }
