@@ -16,11 +16,11 @@ class SmartHomeTest {
 	void testModeStrategy() {
 		AirConditioner ac = new AirConditioner("リビングエアコン", new NormalMode());
 		// 通常：1000
-		assertEquals(1000, ac.clculetePowerConsumption());
+		assertEquals(1000, ac.calculatePowerConsumption());
 
 		// 省エネ：1000 * 0.5 = 500
 		ac.setActionModeStrategy(new LowPowerMode());
-		assertEquals(500, ac.clculetePowerConsumption());
+		assertEquals(500, ac.calculatePowerConsumption());
 	}
 
 	@Test
@@ -29,14 +29,14 @@ class SmartHomeTest {
 		ActionModeStrategy savingMode = new LowPowerMode();
 
 		// すべて省エネモードで家電をリスト化（多態性）
-		List<HomeAppliances> appliances = Arrays.asList(
+		List<HomeAppliance> appliances = Arrays.asList(
 				new AirConditioner("エアコン", savingMode), // 1000 * 0.5 = 500
 				new Lighting("ライト", savingMode) // 100 * 0.5 = 50
 		);
 
 		int totalPower = 0;
-		for (HomeAppliances appliance : appliances) {
-			totalPower += appliance.clculetePowerConsumption(); // 多態性による呼び出し
+		for (HomeAppliance appliance : appliances) {
+			totalPower += appliance.calculatePowerConsumption(); // 多態性による呼び出し
 		}
 
 		assertEquals(550, totalPower, "省エネモード時の一括集計電力が正しくありません");
