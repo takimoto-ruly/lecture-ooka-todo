@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("問題1: 多階層配送料計算エンジンの網羅テスト")
+@DisplayName("多階層配送料計算エンジンの網羅テスト")
 class DeliveryEngineTest {
 
 	@Test
