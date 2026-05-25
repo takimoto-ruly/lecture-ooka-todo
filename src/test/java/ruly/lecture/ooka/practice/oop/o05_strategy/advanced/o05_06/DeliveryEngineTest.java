@@ -15,27 +15,27 @@ class DeliveryEngineTest {
 		DeliveryStrategy premium = new PremiumDelivery();
 
 		// 1. 親クラス単体の検証 (重量 10.0kg)
-		ParcelBase parent = new ParcelBase("TRK-001", 10.0);
-		assertEquals(1500, parent.calculateCost(economy)); // 10.0 * 150 = 1500
-		assertEquals(7000, parent.calculateCost(premium)); // 10.0 * 500 + 2000 = 7000
+		Luggage parent = new Luggage("TRK-001", 10.0);
+		assertEquals(1500, parent.getDeliveryFee(economy)); // 10.0 * 150 = 1500
+		assertEquals(7000, parent.getDeliveryFee(premium)); // 10.0 * 500 + 2000 = 7000
 
 		// 2. 子クラス（クール冷凍便）の検証 (親の計算 + 1200円)
-		ParcelBase child = new CoolDelivery("TRK-002", 10.0);
-		assertEquals(2700, child.calculateCost(economy)); // 1500 + 1200 = 2700
+		Luggage child = new CoolLuggage("TRK-002", 10.0);
+		assertEquals(2700, child.getDeliveryFee(economy)); // 1500 + 1200 = 2700
 
 		// 3. 孫クラス（クール冷凍便・離島宛て）の検証 ((子の計算) * 1.5倍)
-		ParcelBase grandchild = new IslandCoolDelivery("TRK-003", 10.0);
+		Luggage grandchild = new IslandCoolLuggage("TRK-003", 10.0);
 		// エコノミー: (1500 + 1200) * 1.5 = 4050
-		assertEquals(4050, grandchild.calculateCost(economy));
+		assertEquals(4050, grandchild.getDeliveryFee(economy));
 		// プレミアム: (7000 + 1200) * 1.5 = 12300
-		assertEquals(12300, grandchild.calculateCost(premium));
+		assertEquals(12300, grandchild.getDeliveryFee(premium));
 	}
 
 	@Test
 	@DisplayName("異常系：重量に0以下の不正な値を渡した際、適切に例外がスローされるか")
 	void testInvalidWeightException() {
 		DeliveryStrategy economy = new EconomyDelivery();
-		assertThrows(IllegalArgumentException.class, () -> economy.calculateFee(0.0));
-		assertThrows(IllegalArgumentException.class, () -> economy.calculateFee(-5.5));
+		assertThrows(IllegalArgumentException.class, () -> economy.calculateDeliveryFee(0.0));
+		assertThrows(IllegalArgumentException.class, () -> economy.calculateDeliveryFee(-5.5));
 	}
 }
