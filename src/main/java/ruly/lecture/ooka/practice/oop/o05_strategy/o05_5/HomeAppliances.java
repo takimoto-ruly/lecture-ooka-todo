@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@Setter
 public abstract class HomeAppliances {
 	private String name;
-	protected ModeStrategy modeStrategy;
+
+	@Setter
+	protected ActionModeStrategy actionModeStrategy;
 
 	public abstract int clculetePowerConsumption();
 }
