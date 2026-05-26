@@ -1,14 +1,14 @@
 package ruly.lecture.ooka.practice.oop.o05_strategy.advanced.o05_07;
 
-public class FinancialAssets {
-	private String assetsName;
+public class FinancialAsset {
+	private String assetName;
 	private int operationProfit;
 
-	public FinancialAssets(String assetsName, int operationProfit) {
+	public FinancialAsset(String assetName, int operationProfit) {
 		if (operationProfit < 0) {
 			throw new IllegalArgumentException();
 		}
-		this.assetsName = assetsName;
+		this.assetName = assetName;
 		this.operationProfit = operationProfit;
 	}
 
