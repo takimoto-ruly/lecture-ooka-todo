@@ -3,7 +3,7 @@ package ruly.lecture.ooka.practice.oop.o05_strategy.advanced.o05_09;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class HomeAppliances {
+public class HomeAppliance {
 	private String deviceName;
 	private int power;
 
