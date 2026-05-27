@@ -7,6 +7,6 @@ public class SecureRequest extends StreamRequest {
 
 	@Override
 	public String getMaintext(DataProcessingStrategy dataProcessingStrategy) {
-		return " [SECURE_CHANNEL] " + super.getMaintext(dataProcessingStrategy);
+		return "[SECURE_CHANNEL] " + super.getMaintext(dataProcessingStrategy);
 	}
 }
