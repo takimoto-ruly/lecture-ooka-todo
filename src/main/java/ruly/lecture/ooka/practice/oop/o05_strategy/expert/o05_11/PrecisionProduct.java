@@ -7,7 +7,7 @@ public class PrecisionProduct extends Product {
 	}
 
 	@Override
-	public int totalShippingCost(int amount, String deliveryArea) {
-		return super.totalShippingCost(amount, deliveryArea) + 1500;
+	public int calculateTotalShippingCost(String deliveryArea) {
+		return super.calculateTotalShippingCost(deliveryArea) + 1500;
 	}
 }

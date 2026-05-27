@@ -11,11 +11,11 @@ public class Product {
 	private InventoryAllocationStrategy inventoryAllocationStrategy;
 	private PackagingCostStrategy packagingCostStrategy;
 
-	public boolean allocationIsSuccess(int orderQuentity, List<Integer> stocks) {
+	public boolean canAllocate(int orderQuentity, List<Integer> stocks) {
 		return inventoryAllocationStrategy.allocation(orderQuentity, stocks);
 	}
 
-	public int totalShippingCost(int amount, String deliveryArea) {
-		return amount + packagingCostStrategy.calculateCost(amount, deliveryArea);
+	public int calculateTotalShippingCost(String deliveryArea) {
+		return this.amount + packagingCostStrategy.calculateCost(amount, deliveryArea);
 	}
 }
