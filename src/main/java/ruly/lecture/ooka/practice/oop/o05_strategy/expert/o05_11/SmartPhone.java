@@ -1,13 +1,13 @@
 package ruly.lecture.ooka.practice.oop.o05_strategy.expert.o05_11;
 
-public class ActivationShipping extends PrecisionEquipmentShipping {
-	public ActivationShipping(String goodsName, int amount,
+public class SmartPhone extends PrecisionProduct {
+	public SmartPhone(String goodsName, int amount,
 			InventoryAllocationStrategy inventoryAllocationStrategy, PackagingCostStrategy packagingCostStrategy) {
 		super(goodsName, amount, inventoryAllocationStrategy, packagingCostStrategy);
 	}
 
 	@Override
-	public int totalShippingCost(int amount, String DeliveryArea) {
-		return super.totalShippingCost(amount, DeliveryArea) + 800;
+	public int totalShippingCost(int amount, String deliveryArea) {
+		return super.totalShippingCost(amount, deliveryArea) + 800;
 	}
 }
