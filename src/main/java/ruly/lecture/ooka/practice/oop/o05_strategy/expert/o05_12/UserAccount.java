@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserAccount {
 	private String userId;
-	private int currencyAmount;
+	private double currencyAmount;
 	private String currencyCode;
 	private List<String> ipList = new ArrayList<>();
 	private CurrencyExchangeStrategy currencyExchangeStrategy;
