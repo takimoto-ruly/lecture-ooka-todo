@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DemonKing extends MagicMonster {
 	public DemonKing(String name, int attackPower, String attribute, TargetSelectionStrategy targetSelectionStrategy,
-			EnvironmentModifierStrategy environmentModifierStrategy) {
+			EnvironmentStrategy environmentModifierStrategy) {
 		super(name, attackPower, attribute, targetSelectionStrategy, environmentModifierStrategy);
 	}
 

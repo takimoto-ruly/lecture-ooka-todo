@@ -1,9 +1,8 @@
 package ruly.lecture.ooka.practice.oop.o05_strategy.expert.o05_13;
 
-public class WeatherModifierStrategy implements EnvironmentModifierStrategy {
-
+public class AttributeSynergy implements EnvironmentStrategy {
 	@Override
-	public double getMultiplier(String attribute, String weather) {
+	public double getSynegyCorrector(String attribute, String weather) {
 		if (attribute.equals("FIRE") || weather.equals("SUNNY")) {
 			return 2.0;
 		}

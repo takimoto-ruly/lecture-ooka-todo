@@ -15,7 +15,7 @@ class RpgBattleTest {
 	@DisplayName("正常系：ターゲット選定（生存最小HP走査）、環境倍率、および魔王（孫）の3倍補正＆テキスト連鎖の検証")
 	void testBattleAiAndPolymorphism() {
 		TargetSelectionStrategy targeting = new LowHpTargetStrategy();
-		EnvironmentModifierStrategy environment = new WeatherModifierStrategy();
+		EnvironmentStrategy environment = new AttributeSynergy();
 
 		// インデックス1番目の「45」がターゲット（0は死亡しているため対象外とするループ）
 		List<Integer> partyHps = Arrays.asList(120, 45, 0, 90);
