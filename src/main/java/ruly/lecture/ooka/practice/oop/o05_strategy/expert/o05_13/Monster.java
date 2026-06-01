@@ -20,7 +20,7 @@ public class Monster {
 	}
 
 	public String generateBattleLog(List<Integer> hpList, String weather) {
-		return "「" + this.name + "の攻撃:" + targetSelectionStrategy.selectTarget(hpList) + "番目に"
-				+ this.calculateFinalDamage(hpList, weather) + "のダメージ！」";
+		return this.name + "の攻撃: " + targetSelectionStrategy.selectTarget(hpList) + "番目に"
+				+ this.calculateFinalDamage(hpList, weather) + "のダメージ！";
 	}
 }

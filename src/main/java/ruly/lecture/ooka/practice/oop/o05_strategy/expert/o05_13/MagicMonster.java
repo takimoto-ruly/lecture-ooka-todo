@@ -10,6 +10,6 @@ public class MagicMonster extends Monster {
 
 	@Override
 	public String generateBattleLog(List<Integer> hpList, String weather) {
-		return super.generateBattleLog(hpList, weather) + "「魔法障壁を展開」";
+		return super.generateBattleLog(hpList, weather) + "（魔法障壁を展開）";
 	}
 }
